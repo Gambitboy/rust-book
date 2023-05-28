@@ -68,8 +68,27 @@ fn main() {
     println!("The coin in cents is: {}", coin2.value_in_cents());
     println!("The coin in cents is: {}", coin3.value_in_cents());
     println!("The coin in cents is: {}", coin4.value_in_cents());
+
+    let five = Some(5);
+    let _six = plus_one(five);
+    let _none = plus_one(None);
+
+    let dice_roll = 7;
+
+    match dice_roll {
+        3 => println!("3!"),
+        7 => println!("7!"),
+        _ => (),
+    }
 }
 
 fn route(ip_kind: IpAddrKind) {
     println!("The IP type is: {:?}", ip_kind)
+}
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
+    }
 }
