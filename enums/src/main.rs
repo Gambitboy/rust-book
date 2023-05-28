@@ -80,6 +80,28 @@ fn main() {
         7 => println!("7!"),
         _ => (),
     }
+
+    // if let
+    let config_max = Some(3u8);
+    match config_max {
+        Some(max) => println!("The maximum is configured to be {}", max),
+        _ => (),
+    }
+    // Syntax sugar to only check one arm of a match.
+    // Helpful if you need but you loose the exhaustive checking match enforces.
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max)
+    }
+
+    // if let else
+    let mut count = 0;
+    if let Coin::Quarter(state) = coin3 {
+        println!("State quarter from {:?}!", state);
+    } else {
+        count += 1;
+    }
+
+    println!("Count: {}", count);
 }
 
 fn route(ip_kind: IpAddrKind) {
