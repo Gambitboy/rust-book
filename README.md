@@ -6,6 +6,6 @@
 
 `cargo new name --vcs none`
 
-# Current chapter: 8.3
+# Current chapter: 9.1
 
 # Need to do example
